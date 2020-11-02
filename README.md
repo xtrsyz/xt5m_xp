@@ -1,4 +1,4 @@
-# esx_xp
+# xt5m_xp
 Adds an XP ranking system like the one found in GTA:O. Work in progress.
 
 This is the ESX version of my framework agnostic [XpM](https://github.com/Mobius1/XpM) package.
@@ -51,15 +51,15 @@ You can find an interactive demo [here](https://codepen.io/Mobius1/full/yLeMwzO)
 
 ## Requirements
 
-* [es_extended](https://github.com/esx-framework/es_extended/tree/v1-final)
+* [xt5m](https://github.com/xtrsyz/xt5m)
 
 ## Download & Installation
 
-* Download and extract the package: https://github.com/Mobius1/esx_xp/archive/master.zip
-* Rename the `esx_xp-master` directory to `esx_xp`
-* Drop the `esx_xp` directory into your `resources` directory on your server
-* Import the `esx_xp.sql` file into your db
-* Add `ensure esx_xp` in your `server.cfg`
+* Download and extract the package: https://github.com/xtrsyz/xt5m_xp/archive/master.zip
+* Rename the `xt5m_xp-master` directory to `xt5m_xp`
+* Drop the `xt5m_xp` directory into your `resources` directory on your server
+* Import the `xt5m_xp.sql` file into your db
+* Add `ensure xt5m_xp` in your `server.cfg`
 * Edit `config.lua` to your liking
 * Start your server
 
@@ -94,61 +94,61 @@ Config.Leaderboard = {
 
 Set initial XP rank for player
 ```lua
-exports.esx_xp:ESXP_SetInitial(xp --[[ integer ]])
+exports.xt5m_xp:ESXP_SetInitial(xp --[[ integer ]])
 ```
 
 Set Rank for player. This will add the required XP to advance the player to the given rank.
 ```lua
-exports.esx_xp:ESXP_SetRank(rank --[[ integer ]])
+exports.xt5m_xp:ESXP_SetRank(rank --[[ integer ]])
 ```
 
 Give player XP
 ```lua
-exports.esx_xp:ESXP_Add(xp --[[ integer ]])
+exports.xt5m_xp:ESXP_Add(xp --[[ integer ]])
 ```
 
 Remove XP from player
 ```lua
-exports.esx_xp:ESXP_Remove(xp --[[ integer ]])
+exports.xt5m_xp:ESXP_Remove(xp --[[ integer ]])
 ```
 
 ### Getters
 
 Get player's current XP
 ```lua
-exports.esx_xp:ESXP_GetXP()
+exports.xt5m_xp:ESXP_GetXP()
 ```
 
 Get player's current rank
 ```lua
 -- Get rank from current XP
-exports.esx_xp:ESXP_GetRank()
+exports.xt5m_xp:ESXP_GetRank()
 
 -- or
 
 -- Get rank from given XP
-exports.esx_xp:ESXP_GetRank(xp --[[ integer ]])
+exports.xt5m_xp:ESXP_GetRank(xp --[[ integer ]])
 
 ```
 
 Get XP required to advance the player to the next rank
 ```lua
-exports.esx_xp:ESXP_GetXPToNextRank()
+exports.xt5m_xp:ESXP_GetXPToNextRank()
 ```
 
 Get XP required to advance the player to the given rank
 ```lua
-exports.esx_xp:ESXP_GetXPToRank(rank --[[ integer ]])
+exports.xt5m_xp:ESXP_GetXPToRank(rank --[[ integer ]])
 ```
 
 Get max attainable XP
 ```lua
-exports.esx_xp:ESXP_GetMaxXP()
+exports.xt5m_xp:ESXP_GetMaxXP()
 ```
 
 Get max attainable rank
 ```lua
-exports.esx_xp:ESXP_GetMaxRank()
+exports.xt5m_xp:ESXP_GetMaxRank()
 ```
 
 ### Utils
@@ -202,14 +202,14 @@ local playerRank = xPlayer.get("rank")
 
 ## Client Event Listeners
 
-Wait for `esx_xp` to be ready for use
+Wait for `xt5m_xp` to be ready for use
 ```lua
 AddEventHandler("esx_xp:ready", function(data --[[ table ]])
     local currentXP     = data.xp
     local currentRank   = data.rank
     local xPlayer       = data.player
     
-    -- esx_xp is ready for use
+    -- xt5m_xp is ready for use
 end)
 ```
 
@@ -229,7 +229,7 @@ end)
 ```
 
 ## Client Triggers
-Wait for `esx_xp` to be ready:
+Wait for `xt5m_xp` to be ready:
 
 ```lua
 TriggerEvent("esx_xp:isReady", cb)
@@ -247,7 +247,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(10)
     end
     
-    -- Do stuff with esx_xp
+    -- Do stuff with xt5m_xp
 end)
 ```
 
@@ -388,7 +388,7 @@ Pull requests welcome.
 
 ### License
 
-esx_xp - FiveM XP System
+xt5m_xp - FiveM XP System
 
 Copyright (C) 2020 Karl Saunders
 
